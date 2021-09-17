@@ -9,6 +9,7 @@ func _ready():
 func get_transition():
 	if Input.is_action_just_pressed("stick"):
 		return ["CastStick","exit"]
+	
 	return null
 
 func enter_state(old_states):

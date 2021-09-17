@@ -10,7 +10,7 @@
 [ext_resource path="res://Classes/StateMachine/StateDisplayer/RichTextLabel.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 24 )
+extents = Vector2( 8, 24 )
 
 [node name="Hero" type="KinematicBody2D"]
 position = Vector2( 0, -24 )
@@ -23,20 +23,20 @@ script = ExtResource( 3 )
 
 [node name="Idle" type="Node" parent="SM"]
 script = ExtResource( 4 )
-active = true
 
 [node name="CastStick" type="Node" parent="SM"]
 script = ExtResource( 5 )
 
 [node name="Walk" type="Node" parent="SM"]
 script = ExtResource( 7 )
+active = true
 
 [node name="Die" type="Node" parent="SM"]
 script = ExtResource( 6 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 249.746, -80.7261 )
 current = true
-zoom = Vector2( 0.7, 0.7 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( -1, 1 )
@@ -46,3 +46,4 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="RichTextLabel" parent="." instance=ExtResource( 8 )]
+visible = false

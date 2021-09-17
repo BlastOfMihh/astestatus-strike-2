@@ -1,10 +1,21 @@
 extends Node2D
 
+signal completed
+
 onready var collision_shape:=$Sprite2
+onready var send_to_idle=get_node("SendToIdle")
 
 var distance := rand_range(12.0,200)
 var lenght:=rand_range(12.0,200)
 
 
 func _ready():
-	scale.x=scale.x*lenght/collision_shape.shape.extents.x
+	$CollisionShape2D.shape=$CollisionShape2D.shape.duplicate()
+	$CollisionShape2D.shape.extents.x=lenght
+	send_to_idle.position.x=lenght
+	$Sprite.scale.x=lenght/32*2
+	connect("completed", get_parent(), "complete_pillar")
+
+func _on_Detector_body_entered(body):
+	if body.name=="Hero":
+		emit_signal("completed")

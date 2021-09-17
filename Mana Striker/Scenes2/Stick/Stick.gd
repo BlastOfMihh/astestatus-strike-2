@@ -4,12 +4,7 @@ signal stick_fallen
 
 onready var collision_shape=$CollisionShape2D
 
-var speed:=20
-var state="grow"
+export var speed:=20
+export var ang_speed:=200
 
-#func _process(delta):
-#	if Input.is_action_pressed("stick") and state=="grow":
-#
-#	else :
-		
 	

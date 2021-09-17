@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes2/Stick/Stick.gd" type="Script" id=1]
 [ext_resource path="res://Scenes2/Stick/SM.gd" type="Script" id=2]
 [ext_resource path="res://Scenes2/Stick/Grow.gd" type="Script" id=3]
 [ext_resource path="res://Scenes2/Stick/Fall.gd" type="Script" id=4]
 [ext_resource path="res://Classes/StateMachine/StateDisplayer/RichTextLabel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://RandomAssets/Squares/white.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
@@ -13,6 +14,11 @@ extents = Vector2( 8, 8 )
 collision_layer = 4
 collision_mask = 0
 script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.251009, 0.49169 )
+texture = ExtResource( 6 )
+offset = Vector2( 16, -16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 modulate = Color( 1, 0, 0, 1 )
@@ -31,3 +37,4 @@ active = true
 script = ExtResource( 4 )
 
 [node name="StateDisplayer" parent="." instance=ExtResource( 5 )]
+visible = false
