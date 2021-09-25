@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://RandomAssets/GalaxyBg/Nebula Red.png" type="Texture" id=1]
+[ext_resource path="res://Scenes2/Play/Play.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes2/Environment/StickHero.tres" type="Environment" id=3]
+
+[node name="Node2D" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 416, 240 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 4096.0
+margin_bottom = 4096.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer2" parent="." instance=ExtResource( 2 )]
+
+[node name="Play" type="CanvasLayer" parent="."]

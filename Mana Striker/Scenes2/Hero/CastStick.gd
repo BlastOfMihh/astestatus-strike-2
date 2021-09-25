@@ -19,10 +19,12 @@ func _stick_fallen():
 	stick_fallen=true
 
 func enter_state(_old_states):
+	pr.aspr.play(name)
+	
 	var stick=stick_tscn.instance()
 	var shape_extent=pr.collision_shape.shape.extents
 	stick._ready()
-	stick.global_position=Vector2(pr.position.x+shape_extent.x+stick.collision_shape.shape.extents.x+0.4-100,stick.position.y)
+	stick.global_position=Vector2(pr.position.x+shape_extent.x+stick.collision_shape.shape.extents.x+0.4-50,stick.position.y)
 	stick.connect("stick_fallen", self, "_stick_fallen")
 	pr.get_parent().add_child(stick)
 

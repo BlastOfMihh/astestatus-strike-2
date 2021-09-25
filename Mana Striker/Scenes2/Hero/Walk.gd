@@ -19,6 +19,9 @@ func get_transition():
 	return null
 
 func enter_state(old_states):
+	pr._ready()
+	# yield(pr.aspr)
+	pr.aspr.play(name)
 	pass
 
 func exit_state(new_states):
@@ -26,5 +29,7 @@ func exit_state(new_states):
 
 func _during_state(delta):
 	pr.walk_left()
+	if !pr.is_on_floor():
+		pr.aspr.play("Die")
 	pass
 #

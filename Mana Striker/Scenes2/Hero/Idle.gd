@@ -13,6 +13,7 @@ func get_transition():
 	return null
 
 func enter_state(old_states):
+	pr.aspr.play(name)
 	pr.vel=Vector2.ZERO
 	pass
 
@@ -20,5 +21,6 @@ func exit_state(new_states):
 	pass
 
 func _during_state(delta):
+
 	pass
 #

@@ -1,5 +1,6 @@
 extends State
 
+var play_tscn=preload("res://Scenes2/Play/Play.tscn")
 #copy
 func _ready():
 	conflicting_states=[]
@@ -10,7 +11,10 @@ func get_transition():
 	return null
 
 func enter_state(old_states):
-	get_tree().quit()
+#	var play = play_tscn.instance()
+	get_tree().root.get_child(0).add_child(play_tscn.instance())
+
+#	get_tree().quit()
 	pass
 
 func exit_state(new_states):

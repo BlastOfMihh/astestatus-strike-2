@@ -12,6 +12,7 @@ func get_transition():
 	return null
 
 func enter_state(old_states):
+	pr.particles.emitting=false
 	pass
 
 func exit_state(new_states):

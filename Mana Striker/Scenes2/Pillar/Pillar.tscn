@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes2/Pillar/Pillar.gd" type="Script" id=1]
 [ext_resource path="res://RandomAssets/godot_logo.png" type="Texture" id=2]
@@ -7,6 +7,34 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 200 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "enter"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4.4 ),
+"transitions": PoolRealArray( 0.0213445, 0.0213445 ),
+"update": 0,
+"values": [ Vector2( 0, 400 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4.4 ),
+"transitions": PoolRealArray( 0.0883885, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 1 ), Vector2( 1, 1 ) ]
+}
 
 [node name="Pillar" type="StaticBody2D"]
 collision_mask = 0
@@ -24,10 +52,15 @@ texture = ExtResource( 2 )
 offset = Vector2( 32, 32 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 0, 200 )
 shape = SubResource( 1 )
 
 [node name="SendToIdle" parent="." instance=ExtResource( 3 )]
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/enter = SubResource( 2 )
 
 [connection signal="body_entered" from="SendToIdle/Detector" to="." method="_on_Detector_body_entered"]
 

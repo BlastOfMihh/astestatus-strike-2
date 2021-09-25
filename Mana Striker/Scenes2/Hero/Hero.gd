@@ -3,6 +3,7 @@ extends KinematicBody2D
 onready var sm=get_node("SM")
 onready var map=get_parent().get_node("Map")
 onready var collision_shape=$CollisionShape2D
+onready var aspr=$Visuals/AnimatedSprite
 
 var speed:=200
 var vel:=Vector2.ZERO

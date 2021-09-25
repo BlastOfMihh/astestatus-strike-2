@@ -28,6 +28,7 @@ _global_script_class_icons={
 
 config/name="Mana Striker"
 run/main_scene="res://Scenes2/StickHero.tscn"
+boot_splash/image="res://RandomAssets/GalaxyBg/Stars-Big_1_1_PC.png"
 config/icon="res://RandomAssets/Martial Hero 2/Sprites/Run.png"
 
 [autoload]
