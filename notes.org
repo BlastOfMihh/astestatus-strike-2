@@ -1,0 +1,22 @@
+#+TITLE: Notes
+
+* Introducere - 2
+* Considerații teoretice - 4
+** Engine-ul Godot 4
+*** GDScript 4
+*** Fizica din engine-ul Godot - 7
+** Mașini finite de stări - 15
+* Aplicații
+** Scena Hero.tscn
+*** Scriptul StateMachine.gd
+*** Scriptul State.gd 21
+*** Scriptul Walk.gd 22
+*** Scriptul Die.gd 24
+*** Scriptul CastStick.gd 25
+*** Scriptul Idle.gd 25
+*** Scriptul StateDisplayer.gd 28
+** Scena Stick.tscn 28
+*** Scriptul Grow.gd 29
+*** Scriptul Fall.gd 30
+* Bibliografie 31
+* Cuprins 32
